@@ -1,0 +1,414 @@
+/**
+ * WhatsApp Gateway — Admin Leads Dashboard Styles
+ *
+ * @package WhatsApp_Gateway
+ * @since   1.1.0
+ */
+
+/* ================================================================== */
+/* Wrap                                                                */
+/* ================================================================== */
+
+.wa-leads-wrap {
+    max-width: 1100px;
+    margin: 20px auto 40px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    direction: rtl;
+}
+
+/* ================================================================== */
+/* Header                                                              */
+/* ================================================================== */
+
+.wa-leads-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.wa-leads-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1d21;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wa-leads-title .dashicons {
+    color: #25D366;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.wa-leads-subtitle {
+    font-size: 14px;
+    color: #667781;
+    margin: 4px 0 0;
+}
+
+/* ================================================================== */
+/* Buttons                                                             */
+/* ================================================================== */
+
+.wa-leads-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.wa-leads-btn-export {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+
+.wa-leads-btn-export:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    color: #ffffff;
+}
+
+.wa-leads-btn-delete {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.wa-leads-btn-delete:hover {
+    background: #fecaca;
+}
+
+.wa-leads-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ================================================================== */
+/* Notice                                                              */
+/* ================================================================== */
+
+.wa-leads-notice {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.wa-leads-notice-success {
+    background: #e8fbf0;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+/* ================================================================== */
+/* Card                                                                */
+/* ================================================================== */
+
+.wa-leads-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ================================================================== */
+/* Table Actions                                                       */
+/* ================================================================== */
+
+.wa-leads-table-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 20px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+
+.wa-leads-table-actions label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #667781;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* ================================================================== */
+/* Badges                                                              */
+/* ================================================================== */
+
+.wa-leads-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wa-leads-badge-whatsapp {
+    background: #e8fbf0;
+    color: #128C7E;
+}
+
+.wa-leads-badge-call {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+/* ================================================================== */
+/* Table                                                               */
+/* ================================================================== */
+
+.wa-leads-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wa-leads-table thead {
+    background: #f8fafc;
+}
+
+.wa-leads-table th {
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #8696A0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: right;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.wa-leads-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #1a1d21;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.wa-leads-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.wa-leads-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Column widths */
+.wa-leads-col-check {
+    width: 40px;
+    text-align: center !important;
+}
+
+.wa-leads-col-id {
+    width: 50px;
+    color: #8696A0 !important;
+    font-size: 13px !important;
+}
+
+.wa-leads-col-phone {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    letter-spacing: 0.5px;
+}
+
+.wa-leads-col-international {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    color: #128C7E !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.wa-leads-col-ip {
+    color: #8696A0 !important;
+    font-size: 13px !important;
+}
+
+.wa-leads-col-page a {
+    color: #3b82f6;
+    text-decoration: none;
+    max-width: 150px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wa-leads-col-page a:hover {
+    text-decoration: underline;
+}
+
+.wa-leads-col-date {
+    color: #667781 !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+}
+
+.wa-leads-col-actions {
+    width: 80px;
+    white-space: nowrap;
+}
+
+.wa-leads-action-wa,
+.wa-leads-action-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.wa-leads-action-wa {
+    color: #25D366;
+    background: #e8fbf0;
+}
+
+.wa-leads-action-wa:hover {
+    background: #d4f5e0;
+    color: #128C7E;
+}
+
+.wa-leads-action-delete {
+    color: #ef4444;
+    background: #fef2f2;
+}
+
+.wa-leads-action-delete:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.wa-leads-action-wa .dashicons,
+.wa-leads-action-delete .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ================================================================== */
+/* Pagination                                                          */
+/* ================================================================== */
+
+.wa-leads-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.wa-leads-page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #667781;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.wa-leads-page-link:hover {
+    background: #f1f5f9;
+    color: #1a1d21;
+}
+
+.wa-leads-page-active {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #ffffff !important;
+}
+
+.wa-leads-page-active:hover {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+/* ================================================================== */
+/* Empty State                                                         */
+/* ================================================================== */
+
+.wa-leads-empty {
+    text-align: center;
+    padding: 60px 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.wa-leads-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #e8fbf0, #d4f5e0);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.wa-leads-empty-icon .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #25D366;
+}
+
+.wa-leads-empty h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1d21;
+    margin: 0 0 8px;
+}
+
+.wa-leads-empty p {
+    font-size: 14px;
+    color: #667781;
+    margin: 0;
+}
+
+/* ================================================================== */
+/* Responsive                                                          */
+/* ================================================================== */
+
+@media (max-width: 782px) {
+    .wa-leads-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .wa-leads-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

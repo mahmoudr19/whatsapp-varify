@@ -1,0 +1,742 @@
+/**
+ * WhatsApp Gateway — Frontend Styles (Popup Modal)
+ *
+ * Premium, mobile-first styling for the popup validation gateway.
+ * All properties use !important to prevent theme overrides.
+ *
+ * @package WhatsApp_Gateway
+ * @since   1.1.0
+ */
+
+/* ================================================================== */
+/* CSS Custom Properties                                               */
+/* ================================================================== */
+
+:root {
+	--wa-primary: #25D366;
+	--wa-primary-dark: #1EBE5A;
+	--wa-primary-light: #D4F5E0;
+	--wa-primary-glow: rgba(37, 211, 102, 0.25);
+	--wa-bg: #F0F2F5;
+	--wa-card-bg: #FFFFFF;
+	--wa-text: #1A1D21;
+	--wa-text-secondary: #667781;
+	--wa-text-muted: #8696A0;
+	--wa-error: #EA0038;
+	--wa-error-bg: #FFF0F3;
+	--wa-error-border: #FFCDD7;
+	--wa-success: #25D366;
+	--wa-success-bg: #E8FBF0;
+	--wa-border: #E9EDEF;
+	--wa-input-bg: #F7F8FA;
+	--wa-input-focus-bg: #FFFFFF;
+	--wa-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+	--wa-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+	--wa-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+	--wa-shadow-glow: 0 0 0 4px var(--wa-primary-glow);
+	--wa-radius-sm: 8px;
+	--wa-radius-md: 12px;
+	--wa-radius-lg: 16px;
+	--wa-radius-xl: 20px;
+	--wa-font: 'Portada', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--wa-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================================================================== */
+/* Popup Overlay                                                       */
+/* ================================================================== */
+
+.wa-gateway-overlay {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	z-index: 999999 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 16px !important;
+	font-family: var(--wa-font) !important;
+	direction: rtl !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+	transition: opacity 0.3s ease, visibility 0.3s ease !important;
+	margin: 0 !important;
+	border: none !important;
+	box-sizing: border-box !important;
+}
+
+.wa-gateway-overlay--active {
+	opacity: 1 !important;
+	visibility: visible !important;
+	pointer-events: auto !important;
+}
+
+/* Backdrop */
+.wa-gateway-backdrop {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	background: rgba(0, 0, 0, 0.55) !important;
+	backdrop-filter: blur(6px) !important;
+	-webkit-backdrop-filter: blur(6px) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+}
+
+/* ================================================================== */
+/* Container (inside overlay)                                          */
+/* ================================================================== */
+
+.wa-gateway-container {
+	position: relative !important;
+	z-index: 1 !important;
+	width: 100% !important;
+	max-width: 420px !important;
+	transform: scale(0.92) translateY(20px) !important;
+	transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+	margin: 0 auto !important;
+	padding: 0 !important;
+	border: none !important;
+	box-sizing: border-box !important;
+}
+
+.wa-gateway-overlay--active .wa-gateway-container {
+	transform: scale(1) translateY(0) !important;
+}
+
+/* ================================================================== */
+/* Close Button                                                        */
+/* ================================================================== */
+
+.wa-gateway-close {
+	position: absolute !important;
+	top: 12px !important;
+	left: 12px !important;
+	z-index: 10 !important;
+	width: 36px !important;
+	height: 36px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	background: rgba(255, 255, 255, 0.2) !important;
+	border: none !important;
+	border-radius: 50% !important;
+	color: #ffffff !important;
+	cursor: pointer !important;
+	transition: var(--wa-transition) !important;
+	backdrop-filter: blur(4px) !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	min-width: unset !important;
+	min-height: unset !important;
+	line-height: 1 !important;
+	text-decoration: none !important;
+	box-shadow: none !important;
+	outline: none !important;
+}
+
+.wa-gateway-close:hover {
+	background: rgba(255, 255, 255, 0.35) !important;
+	transform: rotate(90deg) !important;
+	color: #ffffff !important;
+}
+
+/* ================================================================== */
+/* Card                                                                */
+/* ================================================================== */
+
+.wa-gateway-card {
+	width: 100% !important;
+	background: var(--wa-card-bg) !important;
+	border-radius: var(--wa-radius-xl) !important;
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2) !important;
+	overflow: hidden !important;
+	position: relative !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+	box-sizing: border-box !important;
+}
+
+.wa-gateway-card::before {
+	content: '' !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	height: 4px !important;
+	background: linear-gradient(90deg, var(--wa-primary), #128C7E, var(--wa-primary)) !important;
+	background-size: 200% 100% !important;
+	animation: wa-gradient-shift 3s ease infinite !important;
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+@keyframes wa-gradient-shift {
+
+	0%,
+	100% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+/* ================================================================== */
+/* Header                                                              */
+/* ================================================================== */
+
+.wa-gateway-header {
+	text-align: center !important;
+	padding: 32px 24px 24px !important;
+	background: linear-gradient(135deg, #075E54 0%, #128C7E 50%, #25D366 100%) !important;
+	color: #ffffff !important;
+	position: relative !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	border: none !important;
+}
+
+.wa-gateway-header::after {
+	content: '' !important;
+	position: absolute !important;
+	bottom: -40px !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	width: 140% !important;
+	height: 60px !important;
+	background: var(--wa-card-bg) !important;
+	border-radius: 50% !important;
+}
+
+.wa-gateway-icon {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 72px !important;
+	height: 72px !important;
+	background: rgba(255, 255, 255, 0.18) !important;
+	border-radius: 50% !important;
+	margin-bottom: 16px !important;
+	animation: wa-pulse 2.5s ease-in-out infinite !important;
+	backdrop-filter: blur(8px) !important;
+	border: none !important;
+	padding: 0 !important;
+}
+
+@keyframes wa-pulse {
+
+	0%,
+	100% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+	}
+
+	50% {
+		box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+	}
+}
+
+.wa-gateway-title {
+	font-size: 22px !important;
+	font-weight: 700 !important;
+	margin: 0 0 6px !important;
+	letter-spacing: -0.3px !important;
+	color: #ffffff !important;
+	padding: 0 !important;
+	border: none !important;
+	line-height: 1.3 !important;
+	text-transform: none !important;
+}
+
+.wa-gateway-subtitle {
+	font-size: 14px !important;
+	margin: 0 !important;
+	opacity: 0.85 !important;
+	font-weight: 400 !important;
+	color: rgba(255, 255, 255, 0.9) !important;
+	padding: 0 !important;
+	border: none !important;
+	line-height: 1.4 !important;
+}
+
+/* ================================================================== */
+/* Form                                                                */
+/* ================================================================== */
+
+.wa-gateway-form {
+	padding: 28px 24px 24px !important;
+	position: relative !important;
+	z-index: 1 !important;
+	margin: 0 !important;
+	border: none !important;
+	background: transparent !important;
+}
+
+.wa-gateway-label {
+	display: block !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	color: var(--wa-text) !important;
+	margin-bottom: 8px !important;
+	letter-spacing: 0.02em !important;
+	padding: 0 !important;
+	border: none !important;
+	line-height: 1.4 !important;
+}
+
+.wa-gateway-input-group {
+	margin-bottom: 20px !important;
+	padding: 0 !important;
+	border: none !important;
+}
+
+.wa-gateway-input-wrapper {
+	display: flex !important;
+	align-items: center !important;
+	background: var(--wa-input-bg) !important;
+	border: 2px solid var(--wa-border) !important;
+	border-radius: var(--wa-radius-md) !important;
+	transition: var(--wa-transition) !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+}
+
+.wa-gateway-input-wrapper:focus-within {
+	background: var(--wa-input-focus-bg) !important;
+	border-color: var(--wa-primary) !important;
+	box-shadow: var(--wa-shadow-glow) !important;
+}
+
+.wa-gateway-prefix {
+	display: flex !important;
+	align-items: center !important;
+	gap: 6px !important;
+	padding: 0 14px !important;
+	border-right: 1px solid var(--wa-border) !important;
+	border-left: none !important;
+	border-top: none !important;
+	border-bottom: none !important;
+	height: 52px !important;
+	flex-shrink: 0 !important;
+	color: var(--wa-text) !important;
+	font-weight: 500 !important;
+	font-size: 14px !important;
+	background: rgba(0, 0, 0, 0.02) !important;
+	margin: 0 !important;
+	box-sizing: border-box !important;
+}
+
+.wa-gateway-flag {
+	font-size: 20px !important;
+	line-height: 1 !important;
+}
+
+.wa-gateway-country-code {
+	font-size: 13px !important;
+	color: var(--wa-text-secondary) !important;
+	font-weight: 600 !important;
+	direction: ltr !important;
+}
+
+.wa-gateway-input {
+	flex: 1 !important;
+	border: none !important;
+	background: transparent !important;
+	padding: 14px 16px !important;
+	font-size: 16px !important;
+	font-family: var(--wa-font) !important;
+	color: var(--wa-text) !important;
+	outline: none !important;
+	width: 100% !important;
+	direction: ltr !important;
+	text-align: left !important;
+	letter-spacing: 1px !important;
+	font-weight: 500 !important;
+	margin: 0 !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	min-height: unset !important;
+	height: auto !important;
+	box-sizing: border-box !important;
+	-webkit-appearance: none !important;
+	appearance: none !important;
+}
+
+.wa-gateway-input::placeholder {
+	color: var(--wa-text-muted) !important;
+	font-weight: 400 !important;
+	letter-spacing: 0.5px !important;
+	opacity: 1 !important;
+}
+
+/* Error state */
+.wa-gateway-input-group--error .wa-gateway-input-wrapper {
+	border-color: var(--wa-error) !important;
+	background: var(--wa-error-bg) !important;
+	box-shadow: 0 0 0 3px rgba(234, 0, 56, 0.12) !important;
+	animation: wa-shake 0.4s ease !important;
+}
+
+@keyframes wa-shake {
+
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	20% {
+		transform: translateX(-4px);
+	}
+
+	40% {
+		transform: translateX(4px);
+	}
+
+	60% {
+		transform: translateX(-3px);
+	}
+
+	80% {
+		transform: translateX(3px);
+	}
+}
+
+/* Success state */
+.wa-gateway-input-group--success .wa-gateway-input-wrapper {
+	border-color: var(--wa-success) !important;
+	background: var(--wa-success-bg) !important;
+	box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.12) !important;
+}
+
+/* Error message */
+.wa-gateway-error {
+	font-size: 13px !important;
+	color: var(--wa-error) !important;
+	margin-top: 8px !important;
+	padding: 0 4px !important;
+	display: none !important;
+	font-weight: 500 !important;
+	align-items: center !important;
+	gap: 6px !important;
+	border: none !important;
+	background: transparent !important;
+}
+
+.wa-gateway-error--visible {
+	display: flex !important;
+	animation: wa-fade-in 0.25s ease forwards !important;
+}
+
+.wa-gateway-error--visible::before {
+	content: '⚠' !important;
+	font-size: 14px !important;
+	flex-shrink: 0 !important;
+}
+
+@keyframes wa-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ================================================================== */
+/* Button                                                              */
+/* ================================================================== */
+
+.wa-gateway-button {
+	width: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 10px !important;
+	padding: 14px 24px !important;
+	border: none !important;
+	border-radius: var(--wa-radius-md) !important;
+	background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+	color: #ffffff !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	font-family: var(--wa-font) !important;
+	cursor: pointer !important;
+	transition: var(--wa-transition) !important;
+	position: relative !important;
+	overflow: hidden !important;
+	letter-spacing: 0.02em !important;
+	margin: 0 !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+	text-transform: none !important;
+	line-height: 1.4 !important;
+	box-sizing: border-box !important;
+	-webkit-appearance: none !important;
+	appearance: none !important;
+}
+
+.wa-gateway-button::before {
+	content: '' !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: -100% !important;
+	width: 100% !important;
+	height: 100% !important;
+	background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%) !important;
+	transition: left 0.5s ease !important;
+}
+
+.wa-gateway-button:hover {
+	transform: translateY(-1px) !important;
+	box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35) !important;
+	color: #ffffff !important;
+	background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+}
+
+.wa-gateway-button:hover::before {
+	left: 100% !important;
+}
+
+.wa-gateway-button:active {
+	transform: translateY(0) !important;
+	box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25) !important;
+}
+
+.wa-gateway-button:disabled {
+	opacity: 0.7 !important;
+	cursor: not-allowed !important;
+	transform: none !important;
+}
+
+.wa-gateway-button--loading .wa-gateway-button-text {
+	opacity: 0 !important;
+}
+
+.wa-gateway-button--loading .wa-gateway-button-icon {
+	position: absolute !important;
+	animation: wa-spin 1s linear infinite !important;
+}
+
+.wa-gateway-button--loading .wa-gateway-button-icon svg {
+	display: none !important;
+}
+
+.wa-gateway-button--loading .wa-gateway-button-icon::after {
+	content: '' !important;
+	display: block !important;
+	width: 22px !important;
+	height: 22px !important;
+	border: 3px solid rgba(255, 255, 255, 0.3) !important;
+	border-top-color: #ffffff !important;
+	border-radius: 50% !important;
+}
+
+@keyframes wa-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.wa-gateway-button-icon {
+	display: flex !important;
+	align-items: center !important;
+	transition: transform 0.25s ease !important;
+}
+
+.wa-gateway-button:hover .wa-gateway-button-icon {
+	transform: translateX(-3px) !important;
+}
+
+/* ================================================================== */
+/* Footer                                                              */
+/* ================================================================== */
+
+.wa-gateway-footer {
+	padding: 16px 24px 20px !important;
+	text-align: center !important;
+	border-top: 1px solid var(--wa-border) !important;
+	border-bottom: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	margin: 0 !important;
+	background: transparent !important;
+}
+
+.wa-gateway-disclaimer {
+	display: block !important;
+	font-size: 12px !important;
+	color: var(--wa-text-muted) !important;
+	margin: 0 !important;
+	font-weight: 400 !important;
+	padding: 0 !important;
+	border: none !important;
+	line-height: 1.6 !important;
+}
+
+.wa-gateway-link {
+	color: var(--wa-primary) !important;
+	text-decoration: underline !important;
+	font-weight: 500 !important;
+	transition: color 0.2s ease !important;
+	cursor: pointer !important;
+}
+
+.wa-gateway-link:hover {
+	color: var(--wa-primary-dark) !important;
+	text-decoration: underline !important;
+}
+
+/* ================================================================== */
+/* Call Gateway State Overrides                                        */
+/* ================================================================== */
+
+.is-call-gateway .wa-gateway-card::before {
+	background: linear-gradient(90deg, #0ea5e9, #0284c7, #0ea5e9) !important;
+	background-size: 200% 100% !important;
+}
+
+.is-call-gateway .wa-gateway-header {
+	background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%) !important;
+}
+
+.is-call-gateway .wa-icon-whatsapp {
+	display: none !important;
+}
+
+.is-call-gateway .wa-icon-call {
+	display: block !important;
+}
+
+.is-call-gateway .wa-gateway-button {
+	background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
+}
+
+.is-call-gateway .wa-gateway-button:hover {
+	box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35) !important;
+	background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
+}
+
+.is-call-gateway .wa-gateway-button:active {
+	box-shadow: 0 2px 8px rgba(14, 165, 233, 0.25) !important;
+}
+
+.is-call-gateway .wa-gateway-input-group--success .wa-gateway-input-wrapper {
+	border-color: #0ea5e9 !important;
+	background: #f0f9ff !important;
+	box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12) !important;
+}
+
+/* ================================================================== */
+/* Responsive                                                          */
+/* ================================================================== */
+
+@media (max-width: 480px) {
+	.wa-gateway-overlay {
+		padding: 16px !important;
+		align-items: center !important;
+	}
+
+	.wa-gateway-container {
+		max-width: 100% !important;
+	}
+
+	.wa-gateway-card {
+		border-radius: var(--wa-radius-xl) !important;
+	}
+
+	.wa-gateway-overlay--active .wa-gateway-container {
+		transform: scale(1) translateY(0) !important;
+	}
+
+	.wa-gateway-header {
+		padding: 24px 20px 20px !important;
+	}
+
+	.wa-gateway-icon {
+		width: 60px !important;
+		height: 60px !important;
+	}
+
+	.wa-gateway-icon svg {
+		width: 36px !important;
+		height: 36px !important;
+	}
+
+	.wa-gateway-title {
+		font-size: 20px !important;
+	}
+
+	.wa-gateway-form {
+		padding: 24px 20px 20px !important;
+	}
+
+	.wa-gateway-button {
+		padding: 13px 20px !important;
+		font-size: 15px !important;
+	}
+
+	.wa-gateway-footer {
+		padding-bottom: 28px !important;
+	}
+}
+
+/* ================================================================== */
+/* Print — hide the popup                                              */
+/* ================================================================== */
+
+@media print {
+	.wa-gateway-overlay {
+		display: none !important;
+	}
+}
+
+/* ================================================================== */
+/* Custom Trigger Button (Standalone)                                  */
+/* ================================================================== */
+
+.wa-custom-trigger-btn {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 10px !important;
+	padding: 14px 28px !important;
+	background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+	color: #ffffff !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	font-family: var(--wa-font, 'Inter', sans-serif) !important;
+	border: none !important;
+	border-radius: 50px !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3) !important;
+	transition: all 0.3s ease !important;
+	line-height: 1 !important;
+	appearance: none !important;
+}
+
+.wa-custom-trigger-btn:hover {
+	transform: translateY(-2px) !important;
+	box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4) !important;
+	color: #ffffff !important;
+}
+
+.wa-custom-trigger-btn svg {
+	width: 22px !important;
+	height: 22px !important;
+	fill: currentColor !important;
+}

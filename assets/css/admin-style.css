@@ -1,0 +1,178 @@
+/**
+ * WhatsApp Gateway — Admin Settings Styles
+ *
+ * Polished styles for the admin settings page.
+ *
+ * @package WhatsApp_Gateway
+ * @since   1.0.0
+ */
+
+/* ================================================================== */
+/* Admin Wrap                                                          */
+/* ================================================================== */
+
+.wa-gateway-admin-wrap {
+    max-width: 700px;
+    margin: 20px auto 40px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ================================================================== */
+/* Header                                                              */
+/* ================================================================== */
+
+.wa-gateway-admin-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.wa-gateway-admin-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1d21;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wa-gateway-admin-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.wa-gateway-admin-logo svg path {
+    fill: #ffffff;
+}
+
+.wa-gateway-admin-subtitle {
+    font-size: 14px;
+    color: #667781;
+    margin: 0;
+}
+
+/* ================================================================== */
+/* Card                                                                */
+/* ================================================================== */
+
+.wa-gateway-admin-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ================================================================== */
+/* Form Elements                                                       */
+/* ================================================================== */
+
+.wa-gateway-admin-card .form-table th {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1d21;
+    padding: 16px 12px 16px 0;
+    vertical-align: top;
+}
+
+.wa-gateway-admin-card .form-table td {
+    padding: 16px 0;
+}
+
+.wa-gateway-admin-card .form-table input[type="text"],
+.wa-gateway-admin-card .form-table input[type="url"],
+.wa-gateway-admin-card .form-table textarea {
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.wa-gateway-admin-card .form-table input:focus,
+.wa-gateway-admin-card .form-table textarea:focus {
+    border-color: #25D366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+    outline: none;
+}
+
+.wa-gateway-admin-card .description {
+    font-size: 12px;
+    color: #8696A0;
+    margin-top: 6px;
+    font-style: normal;
+}
+
+/* Submit button */
+.wa-gateway-admin-card .submit input[type="submit"] {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border: none;
+    color: #ffffff;
+    padding: 10px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-shadow: none;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+
+.wa-gateway-admin-card .submit input[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+/* ================================================================== */
+/* Info Card                                                           */
+/* ================================================================== */
+
+.wa-gateway-admin-info {
+    background: linear-gradient(135deg, #f0faf4, #e8fbf0);
+    border-color: #c6f0d6;
+}
+
+.wa-gateway-admin-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #075E54;
+    margin: 0 0 10px;
+}
+
+.wa-gateway-admin-info p {
+    font-size: 14px;
+    color: #1a1d21;
+    margin: 6px 0;
+}
+
+.wa-gateway-admin-info code {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1px solid #c6f0d6;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #128C7E;
+    margin: 6px 0;
+}
+
+.wa-gateway-admin-hint {
+    font-size: 12px !important;
+    color: #667781 !important;
+    margin-top: 8px !important;
+}
